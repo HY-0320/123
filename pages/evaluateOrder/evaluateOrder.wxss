@@ -1,0 +1,173 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 20rpx 20rpx 60rpx 20rpx;
+  padding: 8rpx 30rpx 20rpx 30rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #ddd;
+}
+
+.card-title {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+  margin-bottom: 20rpx;
+  /* padding-bottom: 20rpx; */
+}
+
+.card-date1 {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.card-date {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.engineer_Name {
+  font-weight: 700;
+
+
+}
+
+.engineer_Phone {
+  font-weight: 700;
+
+
+}
+
+view .pd {
+  padding: 4px 15px;
+}
+
+view .fs10 {
+  font-size: 10px;
+}
+
+map {
+  width: 100%;
+  height: 350px;
+
+  /* font-size: 16px;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+  text-align: center */
+}
+
+.card-read {
+  font-size: 14px;
+  color: #666;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 20rpx 20rpx;
+  padding: 8rpx 50rpx 8rpx 50rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #ddd;
+}
+
+.title {
+  color: #1195db;
+  font-weight: solid;
+}
+
+.score {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center
+}
+
+.score-title {
+  margin-top: 22rpx;
+}
+
+.star {
+  float: left;
+  width: 54rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.star image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+
+score-score {
+  margin-top: 22rpx;
+}
+
+.score .left {
+  width: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  /* float: left; */
+  margin-right: 10rpx;
+}
+
+.score .right {
+  width: 610rpx;
+  font-size: 30rpx;
+  /* float: left; */
+  color: #888;
+}
+
+.conts {
+  width: 100%;
+  height: auto;
+  background: #fff;
+
+}
+
+textarea {
+  width: 784rpx;
+}
+
+.areas {
+
+  height: 315rpx;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15rpx;
+  border: 1rpx solid #ddd;
+}
+
+.currentWordNumber {
+  font-size: 28rpx;
+  position: absolute;
+  left: 0%;
+  bottom: 0rpx;
+  color: #c00;
+}
+
+.hint {
+  font-size: 28rpx;
+  position: absolute;
+  top: 120rpx;
+  left: 30rpx;
+  color: #FF6600;
+}
+
+.red {
+  background: #c00;
+  margin-top: 15rpx;
+}

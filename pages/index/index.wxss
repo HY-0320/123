@@ -1,0 +1,51 @@
+.nav{
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show{
+  width: 33.33333%;
+  height: 10em;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+.show image{
+  width: 2em;
+  height: 2em;
+}
+.show_number{
+   /* font-family:Georgia; */
+    font-family:Arial;
+    font-size: 3em;
+    color:#36322b;
+    /* color:whitesmoke; */
+    
+ 
+        
+}
+.item{
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.item_list{
+  width: 50%;
+  height: 5em;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

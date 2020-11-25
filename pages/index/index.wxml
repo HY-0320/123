@@ -1,0 +1,41 @@
+ <view class="fadeIn" wx:if="{{dialog}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__bd">个人中心检查是否登录后使用</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="close">好的</a>
+            </view>
+        </view>
+    </view>
+<van-toast id="van-toast"  wx:if="isReady"/>
+<view class="nav">
+  <view class="show">
+    <image src="/images/ready.png"></image>
+    <text>待处理</text>
+    <view class='show_number'>{{readyNumber}}</view>
+  </view>
+  <view class="show">
+    <image src="/images/progress.png"></image>
+    <text>进行中</text>
+    <view class='show_number'>{{progressingNumber}}</view>
+  </view>
+  <view class="show">
+    <image src="/images/finish.png"></image>
+    <text>已完成</text>
+    <view class='show_number'>{{filishNumber}}</view>
+  </view>
+</view>
+<view class="item">
+  <view class="item_list" bindtap="torepair" >
+    <text>故障报修</text>
+  </view>
+  <view class="item_list" bindtap="tocheck"> 
+    <text>查看进度</text>
+  </view>
+  <view class="item_list" bindtap="toevaluate">
+    <text>历史订单</text>
+  </view>
+  <view class="item_list" bindtap="tomore" >
+    <text>更多</text>
+  </view>
+</view>

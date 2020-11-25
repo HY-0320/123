@@ -1,0 +1,63 @@
+<view class="cu-bar blue">
+	<view class="content text-bold">
+		维修订单
+	</view>
+</view>
+<van-toast id="van-toast" />
+<!-- 表单填写 -->
+<form bindsubmit="formSubmit">
+	<view class="weui-cells weui-cells_form ">
+		<!-- 真实姓名 -->
+		<view class="weui-cell weui-cell_active">
+			<view class="weui-cell__hd">
+				<label class="weui-label">真实姓名</label>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" placeholder="填写本人真实姓名" name="realname" placeholder-class="weui-input__placeholder" value="{{realname}}" maxlength="-1" auto-focus />
+			</view>
+		</view>
+		<!-- 联系电话 -->
+		<view class="weui-cell weui-cell_active">
+			<view class="weui-cell__hd">
+				<label class="weui-label">联系电话</label>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" placeholder="填写绑定的电话号码" type="number" name="phonenumber" placeholder-class="weui-input__placeholder" value="{{ phonenumber }}" type="number" />
+			</view>
+		</view>
+		<!-- 所在部门 -->
+		<view class="weui-cell weui-cell_active">
+			<view class="weui-cell__hd">
+				<label class="weui-label">维修地点</label>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" placeholder="填写维修地点" placeholder-class="weui-input__placeholder" name="szbm" />
+			</view>
+		</view>
+		<!-- 故障类型 -->
+		<view class="weui-cell weui-cell_active">
+			<view class="weui-cell__hd">
+				<label class="weui-label">故障类型</label>
+			</view>
+			<view class="weui-cell__bd">
+				<picker mode="multiSelector" bindchange="bindCustomPickerChange" bindcolumnchange="bindCustomPickerColumnChange" value="{{customIndex}}" range="{{onlyArray}}">
+					<view class="picker">
+						{{onlyArray[0][customIndex[0]]}}<text class="h">></text>
+					</view>
+				</picker>
+			</view>
+		</view>
+		<!-- 故障描述 -->
+		<view class="weui-cell weui-cell_active">
+			<view class="weui-cell__hd">
+				<label class="weui-label">故障描述</label>
+			</view>
+			<view class="weui-cell__bd">
+				<textarea maxlength="-1" value="{{onlyArray[1][customIndex[1]]}}" bindinput="textareaAInput"></textarea>
+			</view>
+		</view>
+	</view>
+	<view class="weui-form__opr-area margin-top">
+		<button class="weui-btn weui-btn_primary blue" formType="submit">提交</button>
+	</view>
+</form>

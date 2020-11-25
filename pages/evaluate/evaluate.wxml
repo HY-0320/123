@@ -1,0 +1,23 @@
+<view wx:if="{{isHide}}">
+还没有未结束的订单</view>
+<view wx:for="{{overOrder}}" wx:key="serviceTaskId">
+  <text class='bg green'>已结束</text>
+  <view class="card">
+	  <view class="card-title">
+      <text >{{item.engineer.wechatUserName}}</text>
+      <text  >{{item.engineer.wechatUserPhoneNumber}}</text>
+    </view>
+	  <text class="card-date">{{item.serviceOrderCreateTime}}</text>
+	  <text class="card-desc">{{item.serviceType.serviceTypeName}}</text>
+	  <text class="card-read arrow" 
+    data-id="2" 
+    data-serviceTaskId="{{item.serviceTaskId}}"     
+    data-serviceOrderId="{{item.serviceOrderId}}"
+    data-wechatUserName="{{item.engineer.wechatUserName}}"
+    data-wechatUserPhoneNumber="{{item.engineer.wechatUserPhoneNumber}}"
+    data-serviceOrderCreateTime="{{item.serviceOrderCreateTime}}"
+    data-serviceOrderArriveTime="{{item.serviceOrderArriveTime}}" 
+    data-serviceOrderStatus="{{item.serviceOrderStatus}}"
+    bindtap="toevaluate" >查看详情</text>
+  </view>
+</view>

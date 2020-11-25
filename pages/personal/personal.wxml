@@ -1,0 +1,58 @@
+<!-- <view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}">
+    <view class='header'>
+       <image src='/images/logo.png'></image>
+    </view>
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像、位置信息等)</text>
+    </view>
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+-->
+
+<view class="userinfo" wx:if="{{login}}">
+	<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+	<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<view class="userinfo" wx:else>
+	<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+		授权登录
+	</button>
+  </view>
+<view class="hr"></view>
+<!-- 个人信息展示 -->
+<view class="line"></view>
+<view class="item">
+	<view class="title">昵称</view>
+	<view class="detail2">
+		<text>{{showNickname}}</text>
+	</view>
+</view>
+<view class="line"></view>
+<view class="item">
+	<view class="title">性别</view>
+	<view class="detail2">
+		<text>{{showGender}}</text>
+	</view>
+</view>
+
+<view class="hr"></view>
+
+<view class="item">
+	<view class="title">意见反馈</view>
+	<view class="detail2">
+	</view>
+</view>
+<view class="line"></view>
+<view class="item" bindtap="outlogin">
+	<view class="title">退出登陆</view>
+	<view class="detail2">
+	</view>
+</view>
+<view class="line"></view>
+<view class="hr"></view>

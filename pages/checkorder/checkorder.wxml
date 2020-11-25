@@ -1,0 +1,74 @@
+<van-tabs type="card" sticky color='#1195db'>
+	<van-tab title="待处理">
+		<view wx:for="{{createdOrder}}" wx:key="serviceTaskId">
+			<view class='bg blue'>待处理</view>
+			<view class="card">
+				<view class="card-title">
+					<text >{{item.engineer.wechatUserName}}</text>
+					<text  >{{item.engineer.wechatUserPhoneNumber}}</text>
+				</view>
+				<text class="card-date">{{item.serviceOrderCreateTime}}</text>
+				<text class="card-desc">{{item.serviceType.serviceTypeName}}</text>
+				<text class="card-read arrow"
+       data-id="0"
+       data-serviceTaskId="{{item.serviceTaskId}}"
+       data-serviceOrderId="{{item.serviceOrderId}}"
+       data-wechatUserName="{{item.engineer.wechatUserName}}"
+       data-wechatUserPhoneNumber="{{item.engineer.wechatUserPhoneNumber}}"
+       data-serviceOrderCreateTime="{{item.serviceOrderCreateTime}}"
+       data-serviceOrderArriveTime="{{item.serviceOrderArriveTime}}"
+			 data-serviceOrderStatus="{{item.serviceOrderStatus}}"
+			 data-engineerId="{{item.engineer.wechatUserId}}"
+       bindtap="toevaluate" >查看详情</text>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="进行中">
+		<view wx:for="{{processingOrder}}" wx:key="serviceTaskId">
+			<text class='bg red'>进行中</text>
+			<view class="card">
+				<view class="card-title">
+					<text >{{item.engineer.wechatUserName}}</text>
+					<text >{{item.engineer.wechatUserPhoneNumber}}</text>
+				</view>
+				<text class="card-date">{{item.serviceOrderCreateTime}}</text>
+				<text class="card-desc">{{item.serviceType.serviceTypeName}}</text>
+				<text class="card-read arrow"
+    data-id="0"
+    data-serviceTaskId="{{item.serviceTaskId}}"
+    data-serviceOrderId="{{item.serviceOrderId}}"
+    data-wechatUserName="{{item.engineer.wechatUserName}}"
+    data-wechatUserPhoneNumber="{{item.engineer.wechatUserPhoneNumber}}"
+    data-serviceOrderCreateTime="{{item.serviceOrderCreateTime}}"
+    data-serviceOrderArriveTime="{{item.serviceOrderArriveTime}}"
+		data-serviceOrderStatus="{{item.serviceOrderStatus}}"
+		data-engineerId="{{item.engineer.wechatUserId}}"
+    bindtap="toevaluate" >查看详情</text>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="未评论">
+		<view wx:for="{{evaluatedOrder}}" wx:key="serviceTaskId">
+			<text class='bg yellow'>未评论</text>
+			<view class="card">
+				<view class="card-title">
+					<text >{{item.engineer.wechatUserName}}</text>
+					<text  >{{item.engineer.wechatUserPhoneNumber}}</text>
+				</view>
+				<text class="card-date">{{item.serviceOrderCreateTime}}</text>
+				<text class="card-desc">{{item.serviceType.serviceTypeName}}</text>
+				<text class="card-read arrow"
+    data-id="1"
+    data-serviceTaskId="{{item.serviceTaskId}}"
+    data-serviceOrderId="{{item.serviceOrderId}}"
+    data-wechatUserName="{{item.engineer.wechatUserName}}"
+    data-wechatUserPhoneNumber="{{item.engineer.wechatUserPhoneNumber}}"
+    data-serviceOrderCreateTime="{{item.serviceOrderCreateTime}}"
+    data-serviceOrderArriveTime="{{item.serviceOrderArriveTime}}"
+		data-serviceOrderStatus="{{item.serviceOrderStatus}}"
+		data-engineerId="{{item.engineer.wechatUserId}}"
+    bindtap="toevaluate" >查看详情</text>
+			</view>
+		</view>
+	</van-tab>
+</van-tabs>

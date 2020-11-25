@@ -1,0 +1,36 @@
+<van-steps steps="{{ steps }}" active="{{ active }}" active-color="#38f" />
+<van-card thumb="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3713533569,1557791358&fm=26&gp=0.jpg">
+	<van-cell-group slot="title">
+		<van-cell class="engineer_Name" custom-class="pd" title="工程师" border="{{ false }}">{{engineer.wechatUserName}}</van-cell>
+		<van-cell class="engineer_Phone" custom-class="pd" title="联系电话" border="{{ false }}">{{engineer.wechatUserPhoneNumber}}</van-cell>
+	</van-cell-group>
+	<van-cell-group slot="desc">
+		<van-cell class="engineer_Name" custom-class="pd" value-class="fs10" title="订单处理时间" border="{{ false }}">{{engineer.serviceordercreatetime}}</van-cell>
+		<van-cell class="engineer_Phone" custom-class="pd" value-class="fs10" title="预计到达时间" border="{{ false }}">{{engineer.serviceorderarrivetime}}</van-cell>
+	</van-cell-group>
+</van-card>
+<view class="card-map" wx:if="{{isMap}}">
+	<map scale="20" longitude="{{engineerLongitude}}" latitude="{{engineerLatitude}}" markers="{{marks}}" show-compass enable-traffic></map>
+</view>
+<view wx:else>
+	<van-cell-group>
+		<van-cell title="服务态度" border="{{ false }}" center size="large">
+			<van-rate readonly="{{ disable }}" value="{{ serviceEvaluateAttitude }}" icon="like" void-icon="like-o" bind:change="starTap1" color="red" />
+		</van-cell>
+		<van-cell title="维修技术" border="{{ false }}" center size="large">
+			<van-rate readonly="{{ disable }}" value="{{ serviceEvaluateTechnology }}" icon="like" void-icon="like-o" bind:change="starTap2" color="red" />
+		</van-cell>
+		<van-cell title="维修速度" border="{{ false }}" center size="large">
+			<van-rate readonly="{{ disable }}" value="{{ serviceEvaluateSpeed }}" icon="like" void-icon="like-o" bind:change="starTap3" color="red" />
+		</van-cell>
+		<van-cell title="完成程度" border="{{ false }}" center size="large">
+			<van-rate readonly="{{ disable }}" value="{{ serviceEvaluateSolution }}" icon="like" void-icon="like-o" bind:change="starTap4" color="red" />
+		</van-cell>
+	</van-cell-group>
+	<van-cell-group>
+		<van-field disabled="{{disable}}" value="{{ serviceEvaluateNote }}" label="评价" type="textarea" placeholder="请输入评价" autosize show-word-limit border="{{ false }}" input-align="right" size="large" maxlength="50" clearable bind:input="note" />
+	</van-cell-group>
+	<view style="text-align: center;margin-top: 20px">
+		<van-button disabled="{{disable}}" loading="{{ isloading }}" type="info" loading-text="正在提交..." bindtap='handleBtn'>提交评价</van-button>
+	</view>
+</view>

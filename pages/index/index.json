@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "维护中心",
+  "usingComponents": {
+    "van-toast": "../../miniprogram_npm/vant-weapp/toast/index"
+  }
+}

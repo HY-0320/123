@@ -1,0 +1,75 @@
+
+page{
+  background-color: #f1f1f1;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 0 20rpx 60rpx 20rpx;
+  padding: 8rpx 30rpx 20rpx 30rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #ddd;
+}
+.card-title{
+  font-size: 20px;
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+ .bg
+{ 
+  display: inline-block;
+  margin-top: 10rpx;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #f1f1f1;
+   border-radius: 10rpx;
+}
+.blue{
+background-color: blue;
+}
+.red{
+background-color: red;
+}
+.yellow{
+background-color: rgba(207, 207, 23, 0.699);
+}
+.green{
+background-color: rgb(27, 148, 47);
+}
+.card-date{
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.card-desc{
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20rpx;
+   padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+  text-align: center
+}
+.card-read{
+  font-size: 14px;
+  color: #666;
+}
+ 
+/* 伪元素：画上去的箭头 */
+.arrow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow::after{
+    content: "";
+    width: 15rpx;
+    height: 15rpx;
+    border-top: 3rpx solid #ccc;
+    border-right: 3rpx solid #ccc;
+    transform: rotate(45deg);
+}
