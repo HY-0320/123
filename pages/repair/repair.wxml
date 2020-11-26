@@ -31,7 +31,7 @@
 				<label class="weui-label">维修地点</label>
 			</view>
 			<view class="weui-cell__bd">
-				<input class="weui-input" placeholder="填写维修地点" placeholder-class="weui-input__placeholder" name="szbm" />
+				<input class="weui-input" placeholder="扫描二维码获取维修地点" placeholder-class="weui-input__placeholder" disabled name="szbm" value="{{roomAddress}}" />
 			</view>
 		</view>
 		<!-- 故障类型 -->

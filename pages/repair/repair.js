@@ -7,6 +7,8 @@ Page({
   data: {
     realname:null,
     phonenumber:null,
+    roomAddress:"",
+    roomId:"",
     //当前选中数组的下标值
     customIndex: [0,0],
     //当前选中数组
@@ -175,6 +177,7 @@ Page({
     var wechatUserName = e.detail.value.realname
     var wechatUserPhoneNumber = e.detail.value.phonenumber
     var wechatAppletOpenId = app.globalData.openid
+    var roomId = this.data.roomId
     app.globalData.wechatUserName = e.detail.value.realname
     app.globalData.wechatUserPhoneNumber = e.detail.value.phonenumber
     //简单判断订单填写
@@ -221,7 +224,7 @@ Page({
         wechatUserName: wechatUserName,
         wechatUserPhoneNumber: wechatUserPhoneNumber,
         wechatAppletOpenId: wechatAppletOpenId,
-        roomId: 2
+        roomId: roomId
       },
       method: "post",
       success: function (res) {
@@ -251,6 +254,21 @@ Page({
         }
     })
   }, 
+  getRoomInfo:function(roomId){
+    let that = this;
+      wx.request({
+        url: 'https://i-review.xyz/api/v1/room/'+ roomId,
+        method:'GET',
+        success:function(res){
+          console.log(res);
+          that.setData({
+          roomId: res.data.data.roomId,
+          roomAddress: res.data.data.roomAddress
+          })
+         
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -258,13 +276,22 @@ Page({
   onLoad: function (options) {
     var that = this
     var openid=app.globalData.openid
+    if(app.globalData.roomId == ""){
+      wx.scanCode({
+        success (res) {
+          let  roomid = res.path.substring(24)
+          that.getRoomInfo(roomid);
+        }
+      })
+    }
     wx.request({
       url: 'https://i-review.xyz/api/v1/wechat/applet/user/info?openId='+ openid,
       method:'post',
       success:function(res){
         that.setData({
           realname: res.data.data.wechatUserName,
-          phonenumber: res.data.data.wechatUserPhoneNumber
+          phonenumber: res.data.data.wechatUserPhoneNumber,
+          roomAddress:app.globalData.roomAddress
         })
       }
     })
@@ -302,7 +329,8 @@ Page({
       success: function (res) {
         that.setData({
           realname: res.data.data.wechatUserName,
-          phonenumber: res.data.data.wechatUserPhoneNumber
+          phonenumber: res.data.data.wechatUserPhoneNumber,
+          roomAddress:app.globalData.roomAddress
         })
       }
     })

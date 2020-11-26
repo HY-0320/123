@@ -50,8 +50,19 @@ Page({
             success: function (res) {
               //赋值全局变量userInfo
               app.globalData.userInfo = res.userInfo
+              if (app.globalData.userInfo.gender == '1') {
+                that.setData({
+                  showGender: '男'
+                })
+              }
+              else {
+                that.setData({
+                  showGender: '女'
+                })
+              }
               that.setData({
                 userInfo: res.userInfo,
+                showNickname: app.globalData.userInfo.nickName,
                 login:true
               })
                //调用微信的 wx.login 接口获取code

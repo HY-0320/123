@@ -91,13 +91,6 @@
 					"pathName": "pages/repair/repair",
 					"query": "",
 					"scene": null
-				},
-				{
-					"id": 4,
-					"name": "pages/index/index",
-					"pathName": "pages/index/index",
-					"query": "scene=12345",
-					"scene": 1001
 				}
 			]
 		}
